@@ -8,6 +8,7 @@
             <div 
                 v-if="itemOption.children && itemOption.children.length" 
                 class="slidebar-content"
+                :style="{paddingLeft: zIndex * 20 + 10 + 'px'}"
                 @click="dropDown"
             >
                 <span class="inner-icon">
@@ -25,6 +26,7 @@
                 v-else
                 class="slidebar-content"
                 :class="menuSelectList.indexOf(itemOption.id) !== -1 ? 'active' : ''"
+                :style="{paddingLeft: zIndex * 20 + 10 + 'px'}"
             >
                 <template v-if="isFlexible && flexible">
                     <span class="inner-icon">
@@ -46,7 +48,7 @@
                 v-show="isDroup"
             >
                 <template v-for="item in itemOption.children">
-                    <menu-item :itemOption="item" :key="item.id" :theme="theme" :isFlexible="isFlexible"></menu-item>
+                    <menu-item :itemOption="item" :key="item.id" :theme="theme" :isFlexible="isFlexible" :zIndex="zIndex + 1"></menu-item>
                 </template>
             </div>
         </div>
@@ -75,6 +77,12 @@
                 default() {
                     return true;
                 }   
+            },
+            zIndex: {
+                type: Number,
+                default() {
+                    return 0;
+                }
             }
         },
         computed: {
@@ -134,11 +142,11 @@
         transform: rotate(90deg);
     }
     
-    .slidebar-children-warpper .slidebar-list-warpper .slidebar-content,
+    /* .slidebar-children-warpper .slidebar-list-warpper .slidebar-content,
     .slidebar-children-warpper .slidebar-list-warpper .slidebar-children-warpper
     {
         padding-left: 25px;
-    }
+    } */
 
     /*
      * 左侧导航栏伸缩样式

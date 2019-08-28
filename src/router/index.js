@@ -11,7 +11,7 @@ export default new Router({
     routes: [
         {
             path: '/login/index',
-            name: 'Login',
+            name: 'LoginIndex',
             component: () => import('@/view/login/index.vue'),
             meta: {
                 realName: '登录页'
@@ -19,7 +19,7 @@ export default new Router({
         },
         {
             path: '/404/index',
-            name: '404',
+            name: '404Index',
             component: () => import('@/view/404/index.vue'),
             meta: {
                 realName: '404页'
@@ -27,7 +27,7 @@ export default new Router({
         },
         {
             path: '/about/index',
-            name: 'About',
+            name: 'AboutIndex',
             component: () => import('@/view/about/index.vue'),
             meta: {
                 realName: '关于我们'

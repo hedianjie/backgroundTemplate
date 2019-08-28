@@ -32,10 +32,10 @@
                     </div>
                     <DropdownMenu slot="list">
                         <DropdownItem>
-                            <div class="dropdown-list"><Icon type="ios-contact-outline" size="15"/> 个人信息</div>
+                            <div class="dropdown-list" @click="toPersional"><Icon type="ios-contact-outline" size="15"/> 个人信息</div>
                         </DropdownItem>
                         <DropdownItem>
-                            <div class="dropdown-list"><Icon type="ios-log-out" size="15"/> 退出登录</div>
+                            <div class="dropdown-list" @click="toLogin"><Icon type="ios-log-out" size="15"/> 退出登录</div>
                         </DropdownItem>
                     </DropdownMenu>
                 </Dropdown>
@@ -71,6 +71,14 @@
                 // 在store中记录当前展开收起状态
                 this.$store.state.menuFlexible = !this.flexible;
             },
+
+            toPersional() {
+                this.$router.push({name: 'PersionalIndex'});
+            },
+
+            toLogin() {
+                this.$router.push({name: 'LoginIndex'});
+            }
         }
     }
 </script>

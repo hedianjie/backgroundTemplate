@@ -1,10 +1,10 @@
 <template>
-    <div class="layout">
-        <div class="layout-position">
-            <div class="layout-header">
+    <div class="login-layout">
+        <div class="login-layout-position">
+            <div class="login-layout-header">
                 <img src="/static/images/login/login-title.png" alt="">
             </div>
-            <div class="layout-content">
+            <div class="login-layout-content">
                 <div class="side-bg">
                     <img src="/static/images/login/login-left.jpg" alt="">
                 </div>
@@ -23,7 +23,7 @@
                     </form>
                 </div>
             </div>
-            <div class="layout-footer">长春市大众物流装配有限责任公司 Application © 2018-2019</div>
+            <div class="login-layout-footer">长春市大众物流装配有限责任公司 Application © 2018-2019</div>
         </div>
     </div>
 </template>
@@ -44,7 +44,7 @@
     }
 </script>
 <style scoped>
-    .layout{
+    .login-layout{
         position: absolute;
         top: 0;
         left: 0;
@@ -54,7 +54,7 @@
         min-width: 1120px;
         background: url('/static/images/login/login-bg.jpg') no-repeat 100% 100%;
     }
-    .layout-position{
+    .login-layout-position{
         position: absolute;
         left: 0;
         right: 0;
@@ -65,22 +65,22 @@
         height: 500px;
         
     }
-    .layout-header{
+    .login-layout-header{
        text-align: center;
        margin-bottom: 25px;
     }
-     .layout-header img{
+     .login-layout-header img{
          width: auto;
          height: auto;
          display: inline-block;
      }
-     .layout-footer{
+     .login-layout-footer{
          margin-top: 25px;
          text-align: center;
         color: #ccc;
         font-size: 15px;
      }
-    .layout-content{
+    .login-layout-content{
         height: 340px;
         width: 1000px;
         /* position: absolute;
@@ -90,13 +90,13 @@
         margin-top: -170px; */
         overflow: hidden;
     }
-    .layout-content .side-bg,
-    .layout-content .main{
+    .login-layout-content .side-bg,
+    .login-layout-content .main{
         width: 50%;
         float: left;
         height: 100%;
     }
-    .layout-content .side-bg img{
+    .login-layout-content .side-bg img{
         width: 100%;
         height: 100%;
     }

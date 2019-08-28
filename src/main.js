@@ -9,6 +9,8 @@ import {
   Table,
   Radio,
   Checkbox,
+  RadioGroup,
+  CheckboxGroup,
   Switch,
   Select,
   DatePicker,
@@ -19,7 +21,7 @@ import {
   Dropdown,
   DropdownMenu,
   DropdownItem,
-  Badge
+  Badge,
 } from 'iview'
 
 import router from '@/router/index.js'
@@ -32,6 +34,8 @@ Vue.component('Button', Button);
 Vue.component('Table', Table);
 Vue.component('Radio', Radio);
 Vue.component('Checkbox', Checkbox);
+Vue.component('RadioGroup', RadioGroup);
+Vue.component('CheckboxGroup', CheckboxGroup);
 Vue.component('Switch', Switch);
 Vue.component('Select', Select);
 Vue.component('DatePicker', DatePicker);
@@ -96,9 +100,9 @@ router.beforeEach((to, from, next) => {
   if(
     to.name &&
     // to.name != 'HomeIndex' && // 不是首页
-    to.name != 'Login' &&     // 不是登录页
-    to.name != '404' &&       // 不是404页
-    to.name != 'About'        // 不是关于我们页
+    to.name != 'LoginIndex' &&     // 不是登录页
+    to.name != '404Index' &&       // 不是404页
+    to.name != 'AboutIndex'        // 不是关于我们页
   ) {
     store.commit('routerAddRouters', {
       url: to.path,
