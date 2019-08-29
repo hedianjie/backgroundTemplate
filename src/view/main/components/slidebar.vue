@@ -1,7 +1,7 @@
 <template>
     <div 
         class="slidebar-warpper"
-        :class="flexible ? 'slidebar-flexible' : ''"
+        :class="{'slidebar-flexible': flexible, 'slidebar-phone': isPhone}"
     >
         <div class="slidebar-toolbar">
             <div class="toolbar-position">{{userJurisdiction}}</div>
@@ -31,7 +31,7 @@
                 </div>
             </div>
         </div>
-        <div class="slidebar">
+        <div class="slidebar" ref="slidebar" :style="{marginRight: -1 * slidebarScrollWidth + 'px'}">
             <template v-for="item in menuList">
                 <div class="slidebar-hover-box" @mouseenter="showDropMenu($event, item)" @mouseleave="hideDropMenu" :key="item.id">
                     <menu-item :itemOption="item"></menu-item>
@@ -49,6 +49,7 @@
     export default {
         data() {
             return {
+                slidebarScrollWidth: 17,
             }
         },
         computed: {
@@ -72,6 +73,9 @@
             userStatus() {
                 return this.$store.state.userStatus;
             },
+            isPhone() {
+                return this.$store.state.isPhone;
+            }
         },
         methods: {
             /**
@@ -172,6 +176,39 @@
                 this.$store.commit('menuStatusListChange', sid.reverse());
             }, 1000);
         },
+
+        mounted() {
+            
+            const windowResize = () => {
+                /**
+                 * 获取导航栏滚动条的宽度
+                 */
+                this.slidebarScrollWidth = this.$refs.slidebar.offsetWidth - this.$refs.slidebar.clientWidth;
+                /**
+                 * 根据页面宽度调节导航栏的展开收起
+                 */
+                const winWidth = document.documentElement.clientWidth || document.body.clientWidth;
+
+                if(winWidth <= 992) { // 如果小于等于992 收起
+                    if(winWidth <= 600) { // 如果小于等于600 手机
+                        this.$store.state.menuFlexible = true;
+                        this.$store.state.isPhone = true;
+                    }
+                    else {
+                        this.$store.state.menuFlexible = true;
+                        this.$store.state.isPhone = false;
+                    }
+                }
+                else { // 如果大于992 展开
+                    this.$store.state.menuFlexible = false;
+                    this.$store.state.isPhone = false;
+                }
+            }
+
+            windowResize();
+            window.addEventListener('resize', windowResize);
+        },
+
         components: {MenuItem},
     }
 </script>

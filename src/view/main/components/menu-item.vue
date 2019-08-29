@@ -99,6 +99,10 @@
             // 左侧导航栏伸缩状态
             flexible() {
                 return this.$store.state.menuFlexible;
+            },
+
+            isPhone() {
+                return this.$store.state.isPhone
             }
         },
 
@@ -107,7 +111,12 @@
         },
         methods: {
             dropDown() {
+
+                console.log(this.flexible)
                 if(this.isFlexible && this.flexible) { return; }
+
+                
+
                 const id = this.itemOption.id;
                 this.$store.commit('menuStateChange', {id, status: !this.$store.state.menuStatusList[id]});
             },
@@ -159,6 +168,16 @@
         width: 100%;
         text-align: center;
         margin-right: 0;
+    }
+    /** 手机 **/
+    .slidebar-warpper.slidebar-phone .slidebar-list .inner-text,
+    .slidebar-warpper.slidebar-phone .slidebar-list .down-icon{
+        display: inline-block;
+    }
+    .slidebar-warpper.slidebar-phone .slidebar-list .inner-icon{
+        width: auto;
+        text-align: inherit;
+        margin-right: 5px;
     }
 
     /**

@@ -70,7 +70,7 @@ html, body{
     width: 240px;
     height: 100%;
     z-index: 2;
-    border-right: 1px solid #ddd;
+    border-right: 1px solid #39435C;
     background: #39435C;
 }
 .layout-containter{
@@ -112,6 +112,47 @@ html, body{
 .layout.layout-flexible .layout-header{
     padding-left: 60px;
 }
+/** 手机 **/
+.layout.layout-phone{
+  padding-left: 0;
+}
+.layout.layout-phone .layout-header{
+  padding-left: 0;
+}
+/** 手机展开样式 **/
+.layout.layout-phone .layout-slidebar{ /** 展开样式 **/
+  left: 0;
+  opacity: 1;
+  transition: left .15s linear;
+  z-index: 3;
+}
+.layout.layout-flexible.layout-phone .layout-slidebar{ /** 收起样式 **/
+  width: 240px;
+  left: -240px;
+  opacity: 0;
+}
+
+.phone-opacity{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .5;
+    z-index: 2;
+    transition: opacity .15s linear;
+}
+.layout .phone-opacity{ /** 展开样式 **/
+    display: block;
+}
+
+.layout.layout-flexible .phone-opacity{ /** 收起样式 **/
+  opacity: 0;
+  display: none;
+}
+
+
 .layout-content-main{
   background: #fff;
   height: 100%;

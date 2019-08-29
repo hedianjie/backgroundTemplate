@@ -6,7 +6,7 @@
                 <img class="upload-image" :src="item.url" alt="">
                 <div v-if="item.progress == 100" class="upload-close" @click="delUploadUrl(index)">&times;</div>
                 <div class="upload-opacity" :style="{width: width + 'px', height: height + 'px', lineHeight: height + 'px', opacity: (item.progress == 100 ? 0 : 1)}">
-                    <span>{{item.progress}}%</span>
+                    {{ item.progress }}%
                 </div>
             </div>
         </template>
@@ -152,6 +152,10 @@
     }
 </script>
 <style scoped>
+    .upload-warpper{
+        display: inline-block;
+        width: 100%;
+    }
     .upload-list{
         position: relative;
         float: left;

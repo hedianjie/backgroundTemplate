@@ -22,6 +22,8 @@ export default new Vuex.Store({
 
         routerList: [{url: '/home/index', name: 'HomeIndex', realName: '首页', active: true}], // 被打开的路由 [{url, name, active}]
 
+        isPhone: false,                                     // 是否是手机 true=>是 false=>不是
+
     },
     mutations: {
         // 更改菜单展开收起状态

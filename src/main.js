@@ -22,6 +22,9 @@ import {
   DropdownMenu,
   DropdownItem,
   Badge,
+  Form,
+  FormItem
+  // Circle
 } from 'iview'
 
 import router from '@/router/index.js'
@@ -36,7 +39,7 @@ Vue.component('Radio', Radio);
 Vue.component('Checkbox', Checkbox);
 Vue.component('RadioGroup', RadioGroup);
 Vue.component('CheckboxGroup', CheckboxGroup);
-Vue.component('Switch', Switch);
+Vue.component('ISwitch', Switch);
 Vue.component('Select', Select);
 Vue.component('DatePicker', DatePicker);
 Vue.component('Modal', Modal);
@@ -46,6 +49,9 @@ Vue.component('Dropdown', Dropdown);
 Vue.component('DropdownMenu', DropdownMenu);
 Vue.component('DropdownItem', DropdownItem);
 Vue.component('Badge', Badge);
+Vue.component('Form', Form);
+Vue.component('FormItem', FormItem);
+// Vue.component('ICircle', Circle);
 
 
 Message.config({
