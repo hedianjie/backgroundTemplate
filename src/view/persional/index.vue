@@ -61,7 +61,7 @@
                 
             </div>
 
-            <div class="col-md-4" style="margin-left: 40px;">
+            <div class="col-md-4 right-clumn">
                 
                 <FormItem
                     label="头像"
@@ -92,7 +92,7 @@
             </div>
 
         </Form>
-        <div class="clear-both">
+        <div style="clear: both;">
             <Button type="primary">更新基本信息</Button>
         </div>
 
@@ -133,6 +133,10 @@
         margin-bottom: 10px;
         padding-bottom: 10px;
         border-bottom: 1px solid #dcdee2;
+        overflow: hidden;
+        white-space: nowrap;
+        word-break: break-all;
+        text-overflow: ellipsis;
     }
     h2 .tip{
         margin-left: 10px;
@@ -140,5 +144,15 @@
         vertical-align: text-bottom;
         color: #999;
         font-weight: 400;
+    }
+
+    .right-clumn{
+        margin-left: 40px;
+    }
+
+    @media screen and (max-width: 991px){
+        .right-clumn{
+            margin-left: 0;
+        }
     }
 </style>
